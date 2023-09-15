@@ -1,0 +1,1 @@
+export type ElementOf<A extends readonly any[]> = A[number]

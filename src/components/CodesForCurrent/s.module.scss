@@ -1,0 +1,54 @@
+.ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.dim {
+  font-style: italic;
+  color: #ccc;
+  margin-bottom: 0.25rem;
+}
+
+.code {
+  display: inline;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  padding: 0.125rem 0.25rem;
+
+  font-style: italic;
+  white-space: nowrap;
+  
+  list-style-type: none;
+}
+
+.dim-concept {
+  background-color: #f9cfff;
+}
+
+.dim-visual_encoding {
+  background-color: #ffcfcf;
+}
+
+.dim-annotation {
+  background-color: #cfe8ff;
+}
+
+.dim-multiples {
+  background-color: #decfff;
+}
+
+.dim-scope {
+  background-color: #cfffd1;
+}
+
+.dim-abstraction {
+  background-color: #fae4d1;
+}
+
+.dim-references {
+  background-color: #ffe9b0;
+}

@@ -1,0 +1,32 @@
+html, body {
+  font-family: system-ui;
+  margin: 0;
+}
+
+html, body {
+  height: 100dvh;
+}
+
+@supports not (height: 100dvh) {
+  html, body {
+    height: 100%;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background-color: #eee;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 4px;
+  border: 0 solid #eee;
+}

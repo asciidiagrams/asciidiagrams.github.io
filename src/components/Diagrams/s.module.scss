@@ -1,0 +1,29 @@
+@use "../MainContentHeader/s.module.scss" as h;
+
+.ul {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden auto;
+  height: calc(100% - h.$height);
+}
+
+.li {
+  list-style: none;
+  
+  &:not(:first-child) {
+    margin-top: 2rem;
+  }
+}
+
+.path {
+  position: sticky;
+  display: block;
+  // not sure why but if left at 0 you can see a sliver in between the label and solid white of the results
+  top: -1px;
+  background-color: #fff;
+  padding-bottom: 0.5rem;
+  
+  font-style: italic;
+  color: #ccc;
+}
