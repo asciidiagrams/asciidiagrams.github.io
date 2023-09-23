@@ -78,6 +78,9 @@ export function onSearch(query) {
   }
 
   if (query == "") {
+    // Update count
+    document.getElementById("diagram-count").innerText = `${getCount()}`;
+
     return;
   }
 
