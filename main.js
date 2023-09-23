@@ -16,7 +16,8 @@ async function main() {
   const toggleCodes = document.getElementById("toggle-codes-button");
   toggleCodes.addEventListener("click", () => {
     document.querySelector(".diagrams").classList.toggle("hide-codes");
-    toggleCodes.value = toggleCodes.value == "Hide codes" ? "Show codes" : "Hide codes";
+    toggleCodes.value =
+      toggleCodes.value == "Hide Codes" ? "Show Codes" : "Hide Codes";
   });
 
   // Search
@@ -38,13 +39,20 @@ async function main() {
   const tags = document.querySelectorAll(".tag");
   for (const tag of tags) {
     tag.addEventListener("click", () => {
-      if (search.value == tag.innerText) {
+      let val = tag.innerText;
+      if (tag.dataset.full != null) {
+        val = tag.dataset.full;
+      }
+
+      val = `"${val}"`;
+
+      if (search.value == val) {
         search.value = "";
         onSearch(search.value);
         return;
       }
 
-      search.value = tag.innerText;
+      search.value = val;
       onSearch(search.value);
     });
   }
@@ -69,19 +77,27 @@ export function onSearch(query) {
     });
   }
 
-  // Update count
-  document.getElementById("diagram-count").innerText = `${getCount()}`;
-
   if (query == "") {
     return;
   }
 
   /* -------------------- Update search ------------------- */
-  const queryLower = query.toLowerCase();
+  const getSearchIndex = (val) => {
+    let queryCompare = query.toLowerCase();
+    let valCompare = val.toLowerCase();
+
+    // If query starts and end with "
+    if (query[0] == '"' && query[query.length - 1] == '"') {
+      queryCompare = query.slice(1, query.length - 1);
+      valCompare = val;
+    }
+
+    return valCompare.indexOf(queryCompare);
+  };
+
   for (const diagram of Object.values(diagramLookup)) {
     // Check if the query is in trimmed
-    const trimmed = diagram.trimmed.toLowerCase();
-    let index = trimmed.indexOf(queryLower);
+    let index = getSearchIndex(diagram.trimmed);
     let isHighlighted = false;
 
     if (index != -1) {
@@ -105,8 +121,7 @@ export function onSearch(query) {
     if (dimEl != null) {
       const dimCodes = dimEl.querySelectorAll(".tag");
       for (const dimCode of dimCodes) {
-        const dimCodeText = dimCode.innerText.toLowerCase();
-        index = dimCodeText.indexOf(queryLower);
+        let index = getSearchIndex(dimCode.innerText);
 
         if (index != -1) {
           dimCode.classList.add("tag-highlight");
