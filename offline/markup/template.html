@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏷️</text></svg>"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ASCII Diagrams</title>
-    <link rel="stylesheet" href="style.css" />
-    <script type="module" defer src="main.js"></script>
-  </head>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏷️</text></svg>" />
 
-  <body>
-    <div class="blurb">
-      <h1>ASCII Diagrams</h1>
-      <p>
-        This web page catalogs ASCII diagrams extracted from four open source code-bases: Chromium, Linux, LLVM, and
-        TensorFlow. There are 2156 diagrams in total, of which 503 have been annotated with our design framework.
-      </p>
-      <p>For information on how the dataset was collected and on the design framework, please refer to the paper.</p>
+  <title>ASCII Diagrams</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" defer src="main.js"></script>
+</head>
 
-      <p>
-        A summary of the design framework and its dimensions is presented below, clicking on any of the tags will filter
-        diagrams that contain the tag.
-      </p>
+<body>
+  <div class="blurb">
+    <h1>ASCII Diagrams</h1>
+    <p>
+      This web page catalogs ASCII diagrams extracted from four open source code-bases: Chromium, Linux, LLVM, and
+      TensorFlow. There are 2156 diagrams in total, of which 504 have been annotated with our design framework.
+    </p>
+    <p>For information on how the dataset was collected and on the design framework, please refer to the paper.</p>
 
-      <div class="design-summary">{{ $design-summary }}</div>
+    <p>
+      A summary of the design framework and its dimensions is presented below, clicking on any of the tags will filter
+      diagrams that contain the tag.
+    </p>
 
-      <p>The dataset can be downloaded <a href="./agg.json" download="">here</a>.</p>
-    </div>
+    <div class="design-summary">{{ $design-summary }}</div>
 
-    <div class="sticky">
-      <input type="button" id="toggle-codes-button" value="Hide Codes" />
-      <input type="text" id="search-input" placeholder="Search diagram..." />
-      <span>(<span id="diagram-count">_</span> diagrams found)</span>
-    </div>
-    <div class="diagrams">{{ $diagrams }}</div>
-  </body>
+    <p>The dataset can be downloaded <a href="./agg.json" download="">here</a>.</p>
+  </div>
+
+  <div class="sticky">
+    <input type="button" id="toggle-codes-button" value="Hide Codes" />
+    <input type="text" id="search-input" placeholder="Search diagram..." />
+    <span>(<span id="diagram-count">_</span> diagrams found)</span>
+  </div>
+  <div class="diagrams">{{ $diagrams }}</div>
+</body>
+
 </html>
