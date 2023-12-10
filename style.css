@@ -315,3 +315,17 @@ highlight {
 .tag.d2:hover::before {
   opacity: 0.4;
 }
+
+/* ------------------------------------------------------ */
+/*                         Callout                        */
+/* ------------------------------------------------------ */
+.callout {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #eeeeee;
+  border-left: #a1a1a1 4px solid;
+  padding-left: 10px;
+  font-family: var(--sans-font);
+}
