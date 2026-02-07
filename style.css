@@ -23,6 +23,13 @@ body {
   padding-bottom: 20px;
 }
 
+@media (width <= 700px) {
+  body {
+    align-items: start !important;
+    padding-left: 20px !important;
+  }
+}
+
 /* ------------------------------------------------------ */
 /*                    Blurb at the top                    */
 /* ------------------------------------------------------ */
